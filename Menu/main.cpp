@@ -14,12 +14,13 @@ int main(int argc, const char * argv[]) {
         std::cout << "1. Option 1\n";
         std::cout << "2. Option 2\n";
         std::cout << "3. Option 3\n";
-        std::cout << "4. Exit\n";
+        std::cout << "4. Exit" << std::endl;
         std::cin >> chosenOption;
-        if (std::cin.fail()){
+        if (!std::cin){
             std::cout << "Invalid option!";
-            chosenOption = 0;
-            break;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
         }
         switch (chosenOption) {
             case 1:

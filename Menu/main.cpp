@@ -16,10 +16,12 @@ int main(int argc, const char * argv[]) {
         std::cout << "3. Option 3\n";
         std::cout << "4. Exit" << std::endl;
         std::cin >> chosenOption;
-        if (!std::cin){
-            std::cout << "Invalid option!";
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        if (!std::cin || chosenOption < 1 || chosenOption > 4){
+            std::cout << "Invalid option!\n";
+            if (!std::cin){
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
             continue;
         }
         switch (chosenOption) {

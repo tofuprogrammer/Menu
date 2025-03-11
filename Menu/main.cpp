@@ -8,7 +8,9 @@
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
+    
     int chosenOption = 0;
+    // Menu output
     do {
         std::cout << "Please choose an option: \n";
         std::cout << "1. Option 1\n";
@@ -16,6 +18,7 @@ int main(int argc, const char * argv[]) {
         std::cout << "3. Option 3\n";
         std::cout << "4. Exit" << std::endl;
         std::cin >> chosenOption;
+        // Checks if input is invalid or out of range
         if (!std::cin || chosenOption < 1 || chosenOption > 4){
             std::cout << "Invalid option!\n";
             if (!std::cin){
@@ -24,6 +27,7 @@ int main(int argc, const char * argv[]) {
             }
             continue;
         }
+        // Switch statement for different options
         switch (chosenOption) {
             case 1:
                 std::cout << "You have selected option 1\n";
@@ -35,5 +39,5 @@ int main(int argc, const char * argv[]) {
                 std::cout << "You have selected option 3\n";
                 break;
         }
-    } while (chosenOption != 4);
+    } while (chosenOption != 4); // Loops until quit is chosen
 }
